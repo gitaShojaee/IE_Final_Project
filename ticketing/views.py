@@ -10,7 +10,7 @@ def movie_list(request):
     context = {
         'movies': movies
     }
-    return HttpResponse(context['movies'])
+    return render(request, 'ticketing/movie_list.html', context)
 
 
 def cinema_list(request):
@@ -18,7 +18,7 @@ def cinema_list(request):
     context = {
         'cinemas': cinemas
     }
-    return HttpResponse(context['cinemas'])
+    return render(request, 'ticketing/cinema_list.html', context)
 
 
 def movie_details(request, movie_id):
@@ -26,7 +26,7 @@ def movie_details(request, movie_id):
     context = {
         'movie': movie
     }
-    return HttpResponse(context['movie'])
+    return render(request, 'ticketing/movie_details.html', context)
 
 
 def cinema_details(request, cinema_id):
@@ -34,4 +34,4 @@ def cinema_details(request, cinema_id):
     context = {
         'cinema': cinema
     }
-    return HttpResponse(context['cinema'])
+    return render(request, 'ticketing/cinema_details.html', context)
