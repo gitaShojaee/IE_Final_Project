@@ -18,7 +18,7 @@
                         <li>
                             <a href="{% url "ticketing:movie_details" movie_id=movie.id %}">
                                 <i class="fas fa-film"></i>
-                                {{ movie }}
+                                {{ movie.name }}
                                 <small class="text-muted">
                                     ({{ movie.director }})
                                 </small>

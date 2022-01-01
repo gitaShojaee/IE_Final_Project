@@ -18,7 +18,7 @@
                         <li>
                             <a href="{% url "ticketing:cinema_details" cinema_id=cinema.id %}">
                                 <i class="fas fa-building"></i>
-                                {{ cinema }}
+                                {{ cinema.name }}
                                 {% if cinema.city %}
                                     <small class="text-muted">
                                         ({{ cinema.city }})
