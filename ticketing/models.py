@@ -11,6 +11,7 @@ class Movie(models.Model):
     year = models.IntegerField()
     length = models.IntegerField()
     description = models.TextField()
+    poster = models.ImageField(upload_to='movie_posters/')
 
 
 class Cinema(models.Model):
@@ -22,15 +23,13 @@ class Cinema(models.Model):
     capacity = models.IntegerField()
     phone = models.CharField(max_length=30, blank=True)
     address = models.TextField()
+    image = models.ImageField(upload_to='cinema_images/', null=True)
 
 
 class ShowTime(models.Model):
     """
     Represents a movie show in a cinema at a specific time
     """
-    # read more about on_delete from
-    # https://docs.djangoproject.com/en/2.2/ref/models/fields/#django.db.models.ForeignKey.on_delete
-    # choices are PROTECT, CASCADE, SET_NULL, SET_DEFAULT, SET(), DO_NOTHING
     movie = models.ForeignKey('Movie', on_delete=models.PROTECT)
     cinema = models.ForeignKey('Cinema', on_delete=models.PROTECT)
 
