@@ -1,0 +1,65 @@
+{% extends "ticketing/base_page.html" %}
+{% load static %}
+
+{% block title %}{{ cinema.name }}{% endblock %}
+
+{% block toolbar_title %}
+    <i class="fas fa-building"></i>
+    {{ cinema.name }}
+{% endblock %}
+
+{% block toolbar_buttons %}
+    <a class="btn btn-warning py-1 px-2" href="{% url "ticketing:cinema_list" %}">
+        <i class="fas fa-list"></i>
+        Cinemas
+    </a>
+{% endblock %}
+
+{% block main_content %}
+    <div class="row py-3">
+        <div class="col-8 item-details">
+            <div class="row px-3">
+                <div class="col-3">
+                    <small class="text-muted">
+                        City:
+                    </small>
+                </div>
+                <div class="col-9">
+                    {% if cinema.city %}
+                        {{ cinema.city }}
+                    {% else %}
+                        <small class="text-muted">(---)</small>
+                    {% endif %}
+                </div>
+                <div class="w-100 my-1"></div>
+                <div class="col-3">
+                    <small class="text-muted">
+                        Capacity
+                    </small>
+                </div>
+                <div class="col-9">
+                    {{ cinema.capacity }}
+                    p
+                </div>
+                <div class="w-100 my-1"></div>
+                <div class="col-3">
+                    <small class="text-muted">
+                        Phone:
+                    </small>
+                </div>
+                <div class="col-9">
+                    {{ cinema.phone|default:"-" }}
+                </div>
+                <div class="w-100 my-1"></div>
+                <div class="col-3">
+                    <small class="text-muted">
+                        Address:
+                    </small>
+                </div>
+                <div class="col-9 item-text-box">
+                    {{ cinema.address }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
