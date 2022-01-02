@@ -61,5 +61,12 @@
                 </div>
             </div>
         </div>
+        <div class="col-4 text-center">
+            {% if cinema.image %}
+                <img class="item-image" src="{{ cinema.image.url }}" alt="{{ cinema.name }}">
+            {% else %}
+                <i class="far fa-10x fa-building text-muted"></i>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}
