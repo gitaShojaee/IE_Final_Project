@@ -4,7 +4,14 @@ from django.shortcuts import render
 # Create your views here.
 from ticketing.models import Movie, Cinema
 
-
+def home_page(request):
+    movies = Movie.objects.order_by('-year').all()[:5]
+    cinemas = Cinema.objects.all()
+    context = {
+        'movies': movies,
+        'cinemas' : cinemas,
+    }
+    return render(request, 'ticketing/homePage.html', context)
 def movie_list(request):
     movies = Movie.objects.all()
     context = {
