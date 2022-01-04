@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem;">
+  <img src="../../../media/{{ cinema.image }}" class="card-img-top" alt="{{cinema.name}}">
+  <div class="card-body">
+    <h5 class="card-title">{{cinema.name}}</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{ cinema.city }}</li>
+  </ul>
+  <div class="card-body">
+    <a href="{% url "ticketing:cinema_details" cinema_id=cinema.id %}">see more</a>
+  </div>
+</div>
