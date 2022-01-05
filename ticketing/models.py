@@ -46,9 +46,9 @@ class ShowTime(models.Model):
     SHOW_CANCELED = 6
     status_choices = (
         (SALE_NOT_STARTED, 'Sale not started'),
-        (SALE_OPEN, 'Sale Open'),
+        (SALE_OPEN, 'Sale is Open'),
         (TICKETS_SOLD, 'Tickets sold'),
-        (SALE_CLOSED, 'sale Closed'),
+        (SALE_CLOSED, 'Sale Closed'),
         (MOVIE_PLAYED, 'Movie played'),
         (SHOW_CANCELED, 'Show canceled'),
     )
