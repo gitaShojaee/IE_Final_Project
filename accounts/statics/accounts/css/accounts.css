@@ -1,0 +1,12 @@
+/* === accounts app styles === */
+/* login page */
+.login-form {
+    width: 60%;
+    margin: 30px auto;
+}
+
+.btn-xs {
+    font-size: 0.6em;
+}
+
+
