@@ -5,8 +5,8 @@
 
 {% block toolbar_title %}
     <i class="fas fa-building"></i>
-    {{ cinema.name }}
 {% endblock %}
+
 
 {% block toolbar_buttons %}
     <a class="btn btn-warning py-1 px-2" href="{% url "ticketing:cinema_list" %}">
@@ -16,6 +16,7 @@
 {% endblock %}
 
 {% block main_content %}
+    <h5>{{ cinema.name }}</h5>
     <div class="row py-3">
         <div class="col-8 item-details">
             <div class="row px-3">
