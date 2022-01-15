@@ -12,13 +12,7 @@
 </head>
 <body>
 <div class="container" id="container">
-    <div class="row align-items-center" id="header">
-        <div class="col text-center" style="margin-bottom: 100px">
-            <h1>
-                Cinema tickets sale system
-            </h1>
-        </div>
-    </div>
+
     {% block toolbar %}
     <div class="row align-items-center" id="toolbar">
         <div class="col-6">
@@ -67,7 +61,17 @@
         </div>
     </div>
     {% endblock %}
-    {% block main_content %}{% endblock %}
+
+    <div class="row align-items-center" id="header">
+        <div class="col text-center" style="margin-bottom: 100px">
+            <h1>
+                <a href={% url 'home' %} id="home_link">Cinema tickets sale system</a>
+            </h1>
+        </div>
+    </div>
+
+
+    <div id="main_content">{% block main_content %}{% endblock %}</div>
 
     <div class="row align-content-center" id="footer">
         <div class="col text-center">
