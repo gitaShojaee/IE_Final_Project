@@ -11,7 +11,7 @@ body {
 }
 
 h4 {
-    margin-left: 25px;
+    margin-left: 20px;
 }
 
 #container{
@@ -155,7 +155,7 @@ ul.item-list > li > a {
 }
 
 .item-image {
-    width: 150px;
+    width: 200px;
     min-height: 200px;
     border: solid 1px #393939;
 }
