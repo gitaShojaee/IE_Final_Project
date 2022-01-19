@@ -30,14 +30,29 @@
                 </a>
             </div>
             <div class="divider"></div>
-
-            <div class="d-flex justify-content-around " id="homepage_cinemas">
-                {% if cinemas %}
-                        {% for cinema in cinemas %}
-                            {% include "ticketing/_cinema_card.html" with cinema=cinema%}
-                        {% endfor %}
-                {% endif %}
+            <div class="row" style="padding-bottom: 60px">
+            <div class="swiper mySwiper">
+                   <div class="swiper-wrapper">
+                      {% if cinemas %}
+                                    {% for cinema in cinemas %}
+                                        <div class="swiper-slide">
+                                        {% include "ticketing/_cinema_card.html" with cinema=cinema%}
+                                        </div>
+                                    {% endfor %}
+                            {% endif %}
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
             </div>
+        </div>
+{#            <div class="d-flex justify-content-around " id="homepage_cinemas">#}
+{#                {% if cinemas %}#}
+{#                        {% for cinema in cinemas %}#}
+{#                            {% include "ticketing/_cinema_card.html" with cinema=cinema%}#}
+{#                        {% endfor %}#}
+{#                {% endif %}#}
+{#            </div>#}
 
             <div class="d-flex justify-content-between">
                 <h3>Movies</h3>
@@ -49,32 +64,48 @@
                 </a>
             </div>
             <div class="divider"></div>
-            <div class="d-flex justify-content-around flex-md-wrap" id="homepage_Movies">
-                {% if movies %}
-                        {% for movie in movies %}
-                            {% include "ticketing/_movie_card.html" with movie=movie%}
-                        {% endfor %}
-                {% endif %}
+            <div class="row">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                  {% if movies %}
+                                {% for movie in movies %}
+                                    <div class="swiper-slide">
+                                    {% include "ticketing/_movie_card.html" with movie=movie%}
+                                    </div>
+                                {% endfor %}
+                        {% endif %}
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
             </div>
+            </div>
+{#            <div class="d-flex justify-content-around flex-md-wrap" id="homepage_Movies">#}
+{#                {% if movies %}#}
+{#                        {% for movie in movies %}#}
+{#                            {% include "ticketing/_movie_card.html" with movie=movie%}#}
+{#                        {% endfor %}#}
+{#                {% endif %}#}
+{#            </div>#}
         </div>
     </div>
 
-    <div class="row">
-        <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-          {% if cinemas %}
-                        {% for cinema in cinemas %}
-                            <div class="swiper-slide">
-                            {% include "ticketing/_cinema_card.html" with cinema=cinema%}
-                            </div>
-                        {% endfor %}
-                {% endif %}
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-    </div>
-    </div>
+{#    <div class="row">#}
+{#        <div class="swiper mySwiper">#}
+{#      <div class="swiper-wrapper">#}
+{#          {% if cinemas %}#}
+{#                        {% for cinema in cinemas %}#}
+{#                            <div class="swiper-slide">#}
+{#                            {% include "ticketing/_cinema_card.html" with cinema=cinema%}#}
+{#                            </div>#}
+{#                        {% endfor %}#}
+{#                {% endif %}#}
+{#      </div>#}
+{#      <div class="swiper-button-next"></div>#}
+{#      <div class="swiper-button-prev"></div>#}
+{#      <div class="swiper-pagination"></div>#}
+{#    </div>#}
+{#    </div>#}
 {% endblock %}
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

@@ -230,3 +230,9 @@ ul.item-list > li > a {
         height: 100%;
         object-fit: cover;
       }
+
+/*movie card*/
+.movie_card, .movie_card:hover, .cinema_card, .cinema_card:hover{
+    color: black;
+    text-decoration: none;
+}
