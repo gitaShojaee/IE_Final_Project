@@ -7,11 +7,11 @@
 
 
 {% block main_content %}
-    <h4>ShowTime List</h4>
     <div class="row">
-        <div class="col py-3">
+        <div class="col py-3 col-md-8 offset-md-2">
+            <h4>ShowTime List</h4>
             {% if showtimes %}
-                <div class="row px-2">
+                <div class="row px-1">
                     <div class="col">
                         <div class="alert alert-info mt-2 mb-0 py-1 px-3">
                             {{ showtimes.count }}
