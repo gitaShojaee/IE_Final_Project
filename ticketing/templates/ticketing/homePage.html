@@ -58,4 +58,41 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+          {% if cinemas %}
+                        {% for cinema in cinemas %}
+                            <div class="swiper-slide">
+                            {% include "ticketing/_cinema_card.html" with cinema=cinema%}
+                            </div>
+                        {% endfor %}
+                {% endif %}
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    </div>
 {% endblock %}
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>

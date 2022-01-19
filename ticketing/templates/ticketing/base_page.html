@@ -8,6 +8,10 @@
     <link rel="stylesheet" type="text/css" href="{% static "ticketing/css/bootstrap.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "ticketing/css/font-awesome.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "ticketing/css/main.css" %}">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     {% block extra_css %}{% endblock %}
 </head>
 <body>
@@ -97,6 +101,25 @@
 <script src="{% static "ticketing/js/bootstrap.bundle.js" %}"></script>
 <script src="{% static "ticketing/js/font-awesome.js" %}"></script>
 <script src="{% static "ticketing/js/main.js" %}"></script>
+<!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
 {% block extra_js %}{% endblock %}
 </body>
 </html>
