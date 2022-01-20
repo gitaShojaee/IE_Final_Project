@@ -53,3 +53,14 @@ class ShowTime(models.Model):
         (SHOW_CANCELED, 'Show canceled'),
     )
     status = models.IntegerField(choices=status_choices, default=SALE_NOT_STARTED)
+
+
+class Ticket(models.Model):
+    """
+    Represents one or more tickets, bought by a user in an order
+    """
+    showtime = models.ForeignKey('ShowTime', on_delete=models.PROTECT)
+    customer = models.ForeignKey('accounts.Profile', on_delete=models.PROTECT)
+    seat_count = models.IntegerField()
+    order_time = models.DateTimeField(auto_now_add=True)
+
