@@ -1,0 +1,10 @@
+{
+  "tags": [
+    "swiper"
+  ],
+  "name": "Swiper - Infinite loop with slides per group",
+  "dependencies": {
+    "parcel": "^2.2.0",
+    "swiper": "^7.4.1"
+  }
+}
