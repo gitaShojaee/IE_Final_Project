@@ -19,33 +19,38 @@
 
 {% block main_content %}
     <div class="row py-3">
-        <div class="col-8 item-details col-md-8 offset-md-1">
+        <div class="col col-md-6 offset-md-3 text-center">
+            <img class="item-image" src="{{ showtime.movie.poster.url }}" alt="{{ showtime.movie.name }}">
+        </div>
+    </div>
+    <div class="row py-5">
+        <div class="col-10 item-details col-md-10 offset-md-1">
         <h5>{{ showtime.movie.name }}
             <span class="small">
                 ({{ showtime.start_time|date:"l - H:i" }})
             </span>
         </h5>
             <div class="row px-3">
-                <div class="col-3">
+                <div class="col-2">
                     <small class="text-muted">
                         <i class="fas fa-film"></i>
                         Movie Name:
                     </small>
                 </div>
-                <div class="col-9">
+                <div class="col-10">
                     {{ showtime.movie.name }}
                 </div>
                 <div class="w-100 my-1"></div>
-                <div class="col-3">
+                <div class="col-2">
                     <small class="text-muted">
                         <i class="fas fa-building"></i>
                         Cinema Name:
                     </small>
                 </div>
-                <div class="col-3">
+                <div class="col-8">
                     {{ showtime.cinema.name }}
                 </div>
-                <div class="col-6 text-left">
+                <div class="col-2 text-left">
                     {% if showtime.status == showtime.SALE_OPEN %}
                         <span class="badge
                             {% if showtime.free_seats < 10 %}
@@ -63,28 +68,28 @@
                     {% endif %}
                 </div>
                 <div class="w-100 my-1"></div>
-                <div class="col-3">
+                <div class="col-2">
                     <small class="text-muted">
                         <i class="far fa-clock"></i>
                         Start Time:
                     </small>
                 </div>
-                <div class="col-9">
+                <div class="col-10">
                     {{ showtime.start_time|date:"l Y/n/j - H:i" }}
                 </div>
                 <div class="w-100 my-1"></div>
-                <div class="col-3">
+                <div class="col-2">
                     <small class="text-muted">
                         <i class="fas fa-map-marker-alt"></i>
                         Address:
                     </small>
                 </div>
-                <div class="col-9 item-text-box">
+                <div class="col-10 item-text-box">
                     {{ showtime.cinema.address }}
                 </div>
                 {% if showtime.status == showtime.SALE_OPEN %}
                     <div class="w-100 my-1"></div>
-                    <div class="col-3">
+                    <div class="col-2">
                         <small class="text-muted">
                             <i class="fas fa-money-bill-wave"></i>
                             Price:
@@ -103,9 +108,6 @@
                     </span>
                 {% endif %}
             </div>
-        </div>
-        <div class="col-2 text-center">
-            <img class="item-image" src="{{ showtime.movie.poster.url }}" alt="{{ showtime.movie.name }}">
         </div>
     </div>
 {% endblock %}

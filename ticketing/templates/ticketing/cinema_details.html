@@ -17,15 +17,24 @@
 
 {% block main_content %}
     <div class="row py-3">
-        <div class="col-8 item-details col-md-8 offset-md-1">
+        <div class="col col-md-6 offset-md-3 text-center">
+            {% if cinema.image %}
+                <img class="item-image" src="{{ cinema.image.url }}" alt="{{ cinema.name }}">
+            {% else %}
+                <i class="far fa-10x fa-building text-muted"></i>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row py-5">
+        <div class="col-10 item-details col-md-10 offset-md-1">
             <h5>{{ cinema.name }}</h5>
             <div class="row px-3">
-                <div class="col-3">
+                <div class="col-2">
                     <small class="text-muted">
                         City:
                     </small>
                 </div>
-                <div class="col-9">
+                <div class="col-10">
                     {% if cinema.city %}
                         {{ cinema.city }}
                     {% else %}
@@ -33,41 +42,34 @@
                     {% endif %}
                 </div>
                 <div class="w-100 my-1"></div>
-                <div class="col-3">
+                <div class="col-2">
                     <small class="text-muted">
                         Capacity
                     </small>
                 </div>
-                <div class="col-9">
+                <div class="col-10">
                     {{ cinema.capacity }}
                     p
                 </div>
                 <div class="w-100 my-1"></div>
-                <div class="col-3">
+                <div class="col-2">
                     <small class="text-muted">
                         Phone:
                     </small>
                 </div>
-                <div class="col-9">
+                <div class="col-10">
                     {{ cinema.phone|default:"-" }}
                 </div>
                 <div class="w-100 my-1"></div>
-                <div class="col-3">
+                <div class="col-2">
                     <small class="text-muted">
                         Address:
                     </small>
                 </div>
-                <div class="col-9 item-text-box">
+                <div class="col-10 item-text-box">
                     {{ cinema.address }}
                 </div>
             </div>
-        </div>
-        <div class="col-2 text-center">
-            {% if cinema.image %}
-                <img class="item-image" src="{{ cinema.image.url }}" alt="{{ cinema.name }}">
-            {% else %}
-                <i class="far fa-10x fa-building text-muted"></i>
-            {% endif %}
         </div>
     </div>
 {% endblock %}
