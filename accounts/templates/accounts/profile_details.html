@@ -1,0 +1,89 @@
+{% extends "accounts/base_accounts.html" %}
+{% load static %}
+
+{% block title %}{{ profile }}{% endblock %}
+
+{% block toolbar_title %}
+    <i class="fas fa-user"></i>
+{% endblock %}
+
+{% block main_content %}
+    <div class="row py-3">
+        <div class="col col-md-6 offset-md-3 text-center">
+            {% if profile.profile_image %}
+                    <img class="profile-image" src="{{ profile.profile_image.url }}" alt="{{ profile }}">
+            {% endif %}
+                <div class="profile-buttons mt-4">
+                    <a class="btn btn-secondary" href="#">
+                        <i class="fas fa-edit"></i>
+                        Edit
+                    </a>
+                    <a class="btn btn-warning" href="#">
+                        <i class="fas fa-key"></i>
+                        Change password
+                    </a>
+                </div>
+        </div>
+    </div>
+    <div class="row py-5">
+        <div class="col-10 item-details col-md-10 offset-md-1">
+            <h4>Profile</h4>
+            <div class="row px-3">
+                <div class="col-4">
+                    <small class="text-muted">
+                        <i class="far fa-user"></i>
+                        Username:
+                    </small>
+                </div>
+                <div class="col-8">
+                    {{ user.username }}
+                </div>
+                <div class="w-100 my-1"></div>
+                <div class="col-4">
+                    <small class="text-muted">
+                        <i class="fas fa-birthday-cake"></i>
+                        Birth date:
+                    </small>
+                </div>
+                <div class="col-8">
+                    {{ profile.birth_date|date:"Y/n/j" }}
+                </div>
+                <div class="w-100 my-1"></div>
+                <div class="col-4">
+                    <small class="text-muted">
+                        <i class="fas fa-mobile-alt"></i>
+                        Mobile:
+                    </small>
+                </div>
+                <div class="col-8">
+                    {{ profile.mobile }}
+                </div>
+                <div class="w-100 my-1"></div>
+                <div class="col-4">
+                    <small class="text-muted">
+                        <i class="fas fa-coins"></i>
+                        Balance:
+                    </small>
+                </div>
+                <div class="col-4">
+                    {{ profile.get_balance_display }}
+                </div>
+                <div class="col-4 text-left">
+                    <a class="btn btn-xs btn-success my-1" href="#">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </div>
+                <div class="w-100 my-1"></div>
+                <div class="col-2">
+                    <small class="text-muted">
+                        <i class="fas fa-home"></i>
+                        Address:
+                    </small>
+                </div>
+                <div class="col-10 item-text-box">
+                    {{ profile.address }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
