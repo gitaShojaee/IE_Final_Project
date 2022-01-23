@@ -72,3 +72,20 @@ def payment_create(request):
     }
     return render(request, 'accounts/payment_create.html', context)
 
+@login_required
+def profile_edit(request):
+    if request.method == 'POST':
+        user_form = MyUserForm(request.POST, instance=request.user)
+        profile_form = ProfileForm(request.POST, files=request.FILES, instance=request.user.profile)
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            return HttpResponseRedirect(reverse('accounts:profile_details'))
+    else:
+        user_form = MyUserForm(instance=request.user)
+        profile_form = ProfileForm(instance=request.user.profile)
+    context = {
+        'user_form': user_form,
+        'profile_form': profile_form
+    }
+    return render(request, 'accounts/profile_edit.html', context)

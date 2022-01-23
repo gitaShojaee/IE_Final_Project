@@ -31,3 +31,13 @@ class PaymentForm(forms.ModelForm):
                 raise ValidationError('Receipt and deposit value do not match')
 
 
+class MyUserForm(UserChangeForm):
+    class Meta(UserChangeForm.Meta):
+        fields = ['first_name', 'last_name', 'email']
+    password = None
+
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['mobile', 'gender', 'address', 'profile_image']
