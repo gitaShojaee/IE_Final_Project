@@ -73,3 +73,12 @@
         </div>
     </div>
 {% endblock %}
+{% block extra_js %}
+    <script>
+        ScrollReveal().reveal('.row', {
+            delay: 2000,
+            useDelay: 'onload',
+            reset: true,
+            });
+    </script>
+{% endblock %}

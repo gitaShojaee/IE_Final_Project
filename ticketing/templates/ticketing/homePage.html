@@ -107,6 +107,25 @@
 {#    </div>#}
 {#    </div>#}
 {% endblock %}
+{% block extra_js %}
+        <script>
+        ScrollReveal().reveal('.swiper', {
+        delay: 1000,
+        useDelay: 'onload',
+        reset: true,
+        });
+        ScrollReveal().reveal('.divider', {
+        delay: 500,
+        useDelay: 'onload',
+        reset: true,
+        });
+        ScrollReveal().reveal('.row', {
+        delay: 500,
+        useDelay: 'onload',
+        reset: true,
+        });
+    </script>
+{% endblock %}
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- Initialize Swiper -->
