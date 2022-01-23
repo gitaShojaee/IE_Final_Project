@@ -5,6 +5,7 @@
   "name": "Swiper - Infinite loop with slides per group",
   "dependencies": {
     "parcel": "^2.2.0",
+    "scrollreveal": "^4.0.9",
     "swiper": "^7.4.1"
   }
 }
