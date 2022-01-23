@@ -45,7 +45,7 @@ class Profile(models.Model):
 
 
 class Payment(models.Model):
-    profile = models.ForeignKey('Profile', on_delete=models.CASCADE, verbose_name='کاربر')
+    profile = models.ForeignKey('Profile', on_delete=models.CASCADE)
     amount = models.PositiveIntegerField()
     transaction_time = models.DateTimeField(auto_now_add=True)
     transaction_code = models.CharField(max_length=30)
