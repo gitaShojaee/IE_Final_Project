@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.contrib.auth import logout, authenticate, login
@@ -8,8 +9,24 @@ from django.shortcuts import render
 from django.urls import reverse
 
 from accounts.forms import MyUserForm, ProfileForm, PaymentForm
-from accounts.models import Payment
+from accounts.models import Payment, Profile
 
+
+def signup_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)
+            profile = Profile(user=user)
+            profile.save()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = UserCreationForm()
+    return render(request, 'accounts/signup.html', {'form': form})
 
 def login_view(request):
     next_url = request.GET.get('next')

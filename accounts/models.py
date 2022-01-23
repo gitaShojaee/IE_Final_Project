@@ -11,7 +11,7 @@ class Profile(models.Model):
     # important fields that are stored in User model:
     #  first_name, last_name, email, date_joined
 
-    mobile = models.CharField(max_length=11)
+    mobile = models.CharField(max_length=11, blank=True)
 
     MALE = 1
     FEMALE = 2
