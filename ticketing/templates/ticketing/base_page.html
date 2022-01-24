@@ -73,9 +73,13 @@
                         </div>
                     </div>
                 {% else %}
-                    <a class="btn btn-primary py-1 px-2 mr-3" href="{% url "accounts:login" %}">
+                    <a class="btn btn-primary py-1 px-2" href="{% url "accounts:login" %}">
                         <i class="fas fa-sign-in-alt"></i>
-                        Login/Signup
+                        Login
+                    </a>
+                    <a class="btn btn-primary py-1 px-2" href="{% url "accounts:signup" %}">
+                        <i class="fas fa-arrow-circle-down"></i>
+                        Signup
                     </a>
                 {% endif %}
             {% endblock %}
