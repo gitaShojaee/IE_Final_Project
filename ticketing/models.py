@@ -25,6 +25,9 @@ class Cinema(models.Model):
     address = models.TextField()
     image = models.ImageField(upload_to='cinema_images/', null=True)
 
+    def __str__(self):
+        return self.name
+
 
 class ShowTime(models.Model):
     """
