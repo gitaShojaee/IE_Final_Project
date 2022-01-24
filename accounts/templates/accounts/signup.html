@@ -8,14 +8,14 @@
 {% endblock %}
 
 {% block main_content %}
-    <form action="" method="post" class="login-form col-md-8 offset-md-2">
+    <form action="" method="post" class="login-form col-lg-4 offset-lg-4 col-md-6 offset-md-3" id="signup">
         {% csrf_token %}
         {% if error %}
         <div class="alert alert-danger col-md-10 offset-md-1">
             {{ error }}
         </div>
         {% endif %}
-        <section class="row justify-content-center">
+        <section class="row row-lg-4 offset-lg-2 row-md-6 offset-md-3">
         {% for field in form %}
               <p>
                 {{ field.label_tag }}<br>
@@ -32,10 +32,11 @@
         </section>
         <div class="form-group row justify-content-center">
             <div class="col-4">
-                <button type="submit" class="btn btn-success w-100">
+                <button type="submit" class="btn btn-sm btn-success w-100">
                     Login
                 </button>
             </div>
         </div>
+    <p class="col-md-8 offset-md-3">have an account already? <a href="{% url "accounts:login" %}" style="color:cornflowerblue">Login</a> </p>
     </form>
 {% endblock %}

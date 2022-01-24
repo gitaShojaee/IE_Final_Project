@@ -1,0 +1,54 @@
+{% extends "accounts/base_accounts.html" %}
+{% load static %}
+
+{% block title %}
+    MyPayment
+{% endblock %}
+
+{% block toolbar_title %}
+    <i class="fas fa-receipt"></i>
+{% endblock %}
+
+{% block main_content %}
+    <div class="row">
+        <div class="col mt-1 col-md-6 offset-md-1">
+            <a href="{% url "accounts:payment_create" %}" class="btn btn-success btn-sm">
+                <i class="fas fa-plus"></i>
+                New Payment
+            </a>
+        </div>
+        <div class="col py-3 col-md-10 offset-md-1">
+            {% if payments %}
+                <ul class="item-list">
+                    {% for payment in payments %}
+                        <li>
+                            <span class="ml-4">
+                                <span class="text-muted ml-1">
+                                    Amount:
+                                </span>
+                                {{ payment.amount }}
+                                T
+                            </span>
+                            <span class="ml-4">
+                                <span class="text-muted ml-1">
+                                    TransactionTime:
+                                </span>
+                                {{ payment.transaction_time|date:"Y/n/j - H:i" }}
+                            </span>
+                            <span class="ml-4">
+                                <span class="text-muted ml-1">
+                                    TransactionCode:
+                                </span>
+                                {{ payment.transaction_code }}
+                            </span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <div class="alert alert-danger">
+                    Unavailable
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

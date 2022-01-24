@@ -1,0 +1,117 @@
+{% extends "accounts/base_accounts.html" %}
+{% load static %}
+
+{% block title %}
+    Profile Edit
+{% endblock %}
+
+{% block toolbar_title %}
+    <i class="fas fa-edit"></i>
+{% endblock %}
+
+{% block main_content %}
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="row py-3">
+            <div class="col col-md-6 offset-md-3 pr-0 text-center">
+                {% if user.profile.profile_image %}
+                    <img class="profile-image" src="{{ user.profile.profile_image.url }}" alt="{{ user.profile }}">
+                {% endif %}
+                <br>
+                <button type="button" class="btn btn-warning btn-md mt-4"
+                        data-toggle="modal" data-target="#profile-image-modal">
+                    <i class="fas fa-image"></i>
+                </button>
+                <div class="modal fade" id="profile-image-modal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-body">
+                            {{ profile_form.profile_image }}
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        {% csrf_token %}
+        <div class="row py-5">
+            <div class="col-10 item-details col-md-10 offset-md-1 profile-items">
+                <h5>Profile Edit</h5>
+                <div class="row px-3">
+                    <div class="col-2">
+                        <small class="text-muted">
+                            <i class="far fa-user"></i>
+                            Username:
+                        </small>
+                    </div>
+                    <div class="col-4">
+                        {{ user.username }}
+                    </div>
+                    <div class="col-2 pl-0">
+                        <small class="text-muted">
+                            <i class="far fa-clock"></i>
+                            Gender:
+                        </small>
+                    </div>
+                    <div class="col-4">
+                        {{ profile_form.gender }}
+                    </div>
+                    <div class="w-100 my-1"></div>
+                    <div class="col-2">
+                        <small class="text-muted">
+                            <i class="far fa-address-card"></i>
+                            FirstName:
+                        </small>
+                    </div>
+                    <div class="col-4">
+                        {{ user_form.first_name }}
+                    </div>
+                    <div class="col-2 pl-0">
+                        <small class="text-muted">
+                            <i class="far fa-address-card"></i>
+                            LastName:
+                        </small>
+                    </div>
+                    <div class="col-4">
+                        {{ user_form.last_name }}
+                    </div>
+                    <div class="w-100 my-1"></div>
+                    <div class="col-2">
+                        <small class="text-muted">
+                            <i class="far fa-envelope-open"></i>
+                            Email:
+                        </small>
+                    </div>
+                    <div class="col-4">
+                        {{ user_form.email }}
+                    </div>
+                    <div class="col-2 pl-0">
+                        <small class="text-muted">
+                            <i class="fas fa-mobile-alt"></i>
+                            Mobile:
+                        </small>
+                    </div>
+                    <div class="col-4">
+                        {{ profile_form.mobile }}
+                    </div>
+                    <div class="w-100 my-1"></div>
+                    <div class="col-2">
+                        <small class="text-muted">
+                            <i class="fas fa-home"></i>
+                            Address:
+                        </small>
+                    </div>
+                    <div class="col-10 item-text-box">
+                        {{ profile_form.address }}
+                    </div>
+                    <div class="w-300 my-2"></div>
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}
