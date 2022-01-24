@@ -1,4 +1,4 @@
-# IE_Final_Project- 
+# Internet Engineering Final Project
 Cinema tickets sale system
 
 Created by Shakiba Ehteshami and Gita Shojaee
