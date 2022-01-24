@@ -43,7 +43,7 @@ To create follow the steps below:
 
 5.Now the last thing is that just go to the cloned project and run the project by writing the following command in the CMD.
 
-### python manage.py runserver 
+### Run
 ```javascript
-virtualenv “name as you like”
+python manage.py runserver
 ```
