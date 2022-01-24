@@ -1,28 +1,28 @@
 {% extends "accounts/base_accounts.html" %}
 {% load static %}
 
-{% block title %}Login{% endblock %}
+{% block title %}Signup{% endblock %}
 
 {% block toolbar_title %}
     <i class="fas fa-user"></i>
 {% endblock %}
 
 {% block main_content %}
-    <form action="" method="post" class="login-form col-lg-4 offset-lg-4 col-md-6 offset-md-3" id="signup">
+    <form action="" method="post" class="login-form col-lg-4 offset-lg-4 col-md-6 offset-md-3" style="font-size: 1.15rem;">
         {% csrf_token %}
         {% if error %}
         <div class="alert alert-danger col-md-10 offset-md-1">
             {{ error }}
         </div>
         {% endif %}
-        <section class="row row-lg-4 offset-lg-2 row-md-6 offset-md-3">
+        <section class="row row-lg-4 offset-lg-1 row-md-6 offset-md-1">
         {% for field in form %}
               <p>
-                {{ field.label_tag }}<br>
-                {{ field }}
-                <br>
+                    {{ field.label_tag }}<br>
+                    {{ field }}
                 {% if field.help_text %}
-                  <small style="color: grey">{{ field.help_text }}</small>
+                    <br>
+                  <small style="color: grey;font-size: 0.8em" >{{ field.help_text }}</small>
                 {% endif %}
                 {% for error in field.errors %}
                   <p style="color: red">{{ error }}</p>
@@ -30,13 +30,14 @@
               </p>
         {% endfor %}
         </section>
+        <br>
         <div class="form-group row justify-content-center">
             <div class="col-4">
                 <button type="submit" class="btn btn-sm btn-success w-100">
-                    Login
+                    Signup
                 </button>
             </div>
         </div>
-    <p class="col-md-8 offset-md-3">have an account already? <a href="{% url "accounts:login" %}" style="color:cornflowerblue">Login</a> </p>
+    <p class="col-md-10 offset-md-2">have an account already? <a href="{% url "accounts:login" %}" style="color:cornflowerblue">Login</a> </p>
     </form>
 {% endblock %}
