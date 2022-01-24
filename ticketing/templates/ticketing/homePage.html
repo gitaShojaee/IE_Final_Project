@@ -4,12 +4,10 @@
 {% block title %}
 
 {% endblock %}
-{#{% block toolbar %}#}
-{##}
-{#{% endblock %}#}
-{#{% block toolbar_title %}#}
-{#    Movie Tickets Online Booking & Showtimes#}
-{#{% endblock %}#}
+
+{% block extra_css %}
+
+{% endblock %}
 
 {% block main_content %}
     <div class="row">
@@ -30,19 +28,19 @@
                 </a>
             </div>
             <div class="divider"></div>
-            <div class="row" style="padding-bottom: 60px">
+            <div class="row" style="padding-bottom: 60px" id="homepage_cinemas">
             <div class="swiper mySwiper">
                    <div class="swiper-wrapper">
                       {% if cinemas %}
                                     {% for cinema in cinemas %}
-                                        <div class="swiper-slide">
+                                        <div class="swiper-slide" id="h_cinema_wrapper">
                                         {% include "ticketing/_cinema_card.html" with cinema=cinema%}
                                         </div>
                                     {% endfor %}
                             {% endif %}
                   </div>
-                  <div class="swiper-button-next"></div>
-                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next" style="color: #d80032"></div>
+                  <div class="swiper-button-prev" style="color: #d80032"></div>
                   <div class="swiper-pagination"></div>
             </div>
         </div>
@@ -64,19 +62,19 @@
                 </a>
             </div>
             <div class="divider"></div>
-            <div class="row">
+            <div class="row" id="homepage_Movies">
             <div class="swiper mySwiper">
               <div class="swiper-wrapper">
                   {% if movies %}
                                 {% for movie in movies %}
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide" id="h_movie_wrapper">
                                     {% include "ticketing/_movie_card.html" with movie=movie%}
                                     </div>
                                 {% endfor %}
                         {% endif %}
               </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next" style="color: #d80032"></div>
+              <div class="swiper-button-prev" style="color: #d80032"></div>
               <div class="swiper-pagination"></div>
             </div>
             </div>
