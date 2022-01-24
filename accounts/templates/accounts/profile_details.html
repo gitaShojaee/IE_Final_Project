@@ -12,6 +12,8 @@
         <div class="col col-md-6 offset-md-3 text-center">
             {% if profile.profile_image %}
                     <img class="profile-image" src="{{ profile.profile_image.url }}" alt="{{ profile }}">
+            {% else %}
+                    <img class="profile-image" src="{% static 'admin/img/gis/default_profile_pic.jpg' %}" alt="{{ profile }} ">
             {% endif %}
                 <div class="profile-buttons mt-4">
                     <a class="btn btn-secondary" href="#">

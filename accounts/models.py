@@ -20,7 +20,9 @@ class Profile(models.Model):
 
     birth_date = models.DateField(null=True, blank=True)
     address = models.TextField(null=True, blank=True)
-    profile_image = models.ImageField(upload_to='users/profile_images/', null=True, blank=True)
+    profile_image = models.ImageField(upload_to='users/profile_images/',
+                                      default='users/profile_images/default_profile_pic.jpg',
+                                      null=True, blank=True)
 
     # fields related to tickets
     balance = models.IntegerField(default=0)
