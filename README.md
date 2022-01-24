@@ -1,11 +1,11 @@
-# IE_Final_Project- 
+# Internet Engineering Final Project
 Cinema tickets sale system
 
 Created by Shakiba Ehteshami and Gita Shojaee
 
 studentId : 970122680101 - 970122680031
 
-# Clone and Run a Django Project from Github
+# Setup
 ### requirements
 Github Desktop / Git Bash
 Python 3
