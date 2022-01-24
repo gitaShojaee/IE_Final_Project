@@ -40,6 +40,11 @@ To create follow the steps below:
 3.Navigate to the cloned folder and open the setting.py and paste the copied SECRET_KEY.
 
 4.Then open the cmd in that folder and do the migration part and also create the superuser by the following commands.
+```javascript
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+```
 
 5.Now the last thing is that just go to the cloned project and run the project by writing the following command in the CMD.
 
