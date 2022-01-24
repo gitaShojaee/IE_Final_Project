@@ -39,13 +39,13 @@
                     </div>
                 </div>
 {#                 gap: 10px 20px#}
-                <div class="row col-15 px-2 py-4" id="showtime_list" style="font-size: 1.5em; row-gap:3vh; column-gap: 1vw">
+                <div class="row col-15 px-4 py-4" id="showtime_list" style="font-size: 1.5em; row-gap:3vh; column-gap: 1vw">
 
                     {% for showtime in showtimes %}
 {#                        class="col-4 px-2 py-4 "     style="flex: 1 1 0px;"#}
                         <div style="flex-grow: 1;">
                             <a href="{% url "ticketing:showtime_details" showtime_id=showtime.id %}"
-                               style=" width: 21vw; min-width:12vw; min-height:14vh; max-height:20vh "
+                               style=" width: 25vw; min-width:12vw; min-height:14vh; max-height:24vh; "
                                class="showtime-box btn
                                 {% if showtime.status != showtime.SALE_OPEN %}
                                     disabled btn-outline-secondary
