@@ -12,7 +12,7 @@
         <h4>ShowTime List</h4>
             <div class="row">
                 <div class="col my-0 mx-4 py-1 px-3 search-bar">
-                    <form action="" method="get" class="form-row px-2">
+                    <form action="" method="get" class="form-row px-2" style="font-size:1.25em; justify-content: space-between">
                         {% include "ticketing/_form_field.html" with field=search_form.movie_name %}
                         {% include "ticketing/_form_field.html" with field=search_form.cinema %}
 
@@ -38,10 +38,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="row px-2">
+{#                 gap: 10px 20px#}
+                <div class="row col-15 px-2 py-4" id="showtime_list" style="font-size: 1.5em; row-gap:3vh; column-gap: 1vw">
+
                     {% for showtime in showtimes %}
-                        <div class="col-3 px-2 py-2">
+{#                        class="col-4 px-2 py-4 "     style="flex: 1 1 0px;"#}
+                        <div style="flex-grow: 1;">
                             <a href="{% url "ticketing:showtime_details" showtime_id=showtime.id %}"
+                               style=" width: 21vw; min-width:12vw; min-height:14vh; max-height:20vh "
                                class="showtime-box btn
                                 {% if showtime.status != showtime.SALE_OPEN %}
                                     disabled btn-outline-secondary
@@ -55,7 +59,8 @@
                                 <span>
                                     {{ showtime.start_time|date:"l n/j - H:i" }}
                                 </span>
-                                {# TODO: extract a template tag or filter for class below #}
+
+                                <br/>
                                 <span class="showtime-status badge
                                     {% if showtime.status == showtime.SALE_NOT_STARTED %}
                                         badge-warning
