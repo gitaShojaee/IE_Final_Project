@@ -5,7 +5,7 @@ Created by Shakiba Ehteshami and Gita Shojaee
 
 studentId : 970122680101 - 970122680031
 
-# Clone and Run a Django Project from Github
+# Setup
 ### requirements
 Github Desktop / Git Bash
 Python 3
