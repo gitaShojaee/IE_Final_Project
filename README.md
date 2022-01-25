@@ -7,8 +7,9 @@ studentId : 970122680101 - 970122680031
 
 # Setup
 ### requirements
-Github Desktop / Git Bash
-Python 3
+Github Desktop / Git Bash (download link: https://git-scm.com/downloads)
+
+Python(download link: https://www.python.org/downloads/)
 
 ### To run Django prefer to use the Virtual Environment
 Clone or download and issue the below commands in project root directory and open [http://localhost:3000](http://localhost:3000) in browser
@@ -50,4 +51,10 @@ python manage.py createsuperuser
 ### Run
 ```
 python manage.py runserver
+```
+
+###to install packages
+use:
+```
+npm install (in a package directory, no arguments)
 ```
