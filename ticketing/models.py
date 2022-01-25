@@ -13,6 +13,9 @@ class Movie(models.Model):
     description = models.TextField()
     poster = models.ImageField(upload_to='movie_posters/')
 
+    def __str__(self):
+        return self.name
+
 
 class Cinema(models.Model):
     """
@@ -112,6 +115,9 @@ class ShowTime(models.Model):
             self.status = ShowTime.TICKETS_SOLD
         self.save()
 
+    def __str__(self):
+        return self.movie.name + " (" + self.cinema.name + ")"
+
 
 class Ticket(models.Model):
     """
@@ -121,3 +127,6 @@ class Ticket(models.Model):
     customer = models.ForeignKey('accounts.Profile', on_delete=models.PROTECT)
     seat_count = models.IntegerField()
     order_time = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.showtime.__str__()
