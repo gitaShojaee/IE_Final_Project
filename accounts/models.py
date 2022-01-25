@@ -52,5 +52,8 @@ class Payment(models.Model):
     transaction_time = models.DateTimeField(auto_now_add=True)
     transaction_code = models.CharField(max_length=30)
 
+    def __str__(self):
+        return self.profile.__str__() + " (" + self.transaction_code + ")"
+
 
 
