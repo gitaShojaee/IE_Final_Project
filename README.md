@@ -53,7 +53,7 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-###to install packages
+### to install packages
 use:
 ```
 npm install (in a package directory, no arguments)
